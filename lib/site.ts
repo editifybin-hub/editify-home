@@ -31,10 +31,10 @@ export const SOLUTIONS = [
   {
     id: "contratar",
     name: "Contratar Editify",
-    tagline: "Editores prontos pra entregar",
+    tagline: "Seja contratado pra editar",
     description:
-      "Precisa de edição profissional? Contrate editores formados pela Editify. Pra criadores e empresas que querem vídeo bom sem dor de cabeça.",
-    cta: "Contratar um editor",
+      "Entre pra base de editores da Editify e seja contratado por criadores e empresas que precisam de edição de verdade. Seu trabalho na frente de quem paga.",
+    cta: "Quero ser contratado",
     href: "https://contratar.editify.com.br",
     verb: "Trabalhe",
     badge: null,
