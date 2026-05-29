@@ -1,58 +1,49 @@
-import { SOLUTIONS, FOUNDER } from "@/lib/site";
+import { FAMILY, FOUNDER } from "@/lib/site";
 import { socialIcon } from "./SocialIcons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+
   return (
-    <footer className="relative border-t border-white/[0.06]">
-      {/* CTA final */}
+    <footer className="relative" style={{ background: "#0f0f14" }}>
+      {/* fecho de marca (sem CTA de venda) */}
       <div className="max-w-5xl mx-auto px-4 md:px-6 py-20 sm:py-28 text-center">
-        <h2 className="font-[family-name:var(--font-display)] uppercase text-white leading-[0.95] tracking-[-0.01em] text-[clamp(2.25rem,7vw,5rem)]">
-          Bora levar sua edição
+        <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-accent">Ecossistema Editify</p>
+        <h2 className="mt-5 font-[family-name:var(--font-display)] uppercase text-white leading-[0.95] tracking-[-0.01em] text-[clamp(2.5rem,7vw,5rem)]">
+          Feito por editores,
           <br />
-          <span className="text-editify-accent">a sério?</span>
+          <span className="text-accent">pra editores.</span>
         </h2>
-        <a
-          href={SOLUTIONS[0].href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-9 inline-flex items-center justify-center bg-editify-accent text-white font-bold text-[15px] uppercase tracking-wider px-9 py-[18px] rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(227,6,19,0.5)]"
-          style={{ boxShadow: "0 12px 36px rgba(227,6,19,0.35)" }}
-        >
-          Começar pelo Treinamento
-        </a>
+        <p className="mt-6 mx-auto max-w-[560px] text-[15px] sm:text-[16px] text-white/60 leading-relaxed">
+          Treinamento, comunidade e contratação conectados — a casa completa de
+          quem leva edição de vídeo a sério no Brasil.
+        </p>
+
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-2.5">
+          {FAMILY.map((f) => (
+            <a
+              key={f.name}
+              href={f.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-[13px] font-medium text-white/80 hover:text-white hover:border-accent/50 hover:bg-accent/10 transition-all"
+            >
+              {f.name}
+            </a>
+          ))}
+        </div>
       </div>
 
-      {/* rodapé */}
-      <div className="border-t border-white/[0.06]">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      {/* barra legal */}
+      <div className="border-t border-white/[0.08]">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 py-9 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2.5">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/icon.png"
-              alt="Editify"
-              width={28}
-              height={28}
-              className="h-7 w-7 object-contain"
-            />
+            <img src="/favicon.png" alt="Editify" width={28} height={28} className="h-7 w-7 object-contain" />
             <span className="font-[family-name:var(--font-display)] text-[18px] tracking-tight text-white leading-none">
               EDITIFY
             </span>
           </div>
-
-          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            {SOLUTIONS.map((s) => (
-              <a
-                key={s.id}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[14px] text-white/60 hover:text-white transition-colors"
-              >
-                {s.name.replace("Editify", "").trim()}
-              </a>
-            ))}
-          </nav>
 
           <div className="flex items-center gap-3">
             {FOUNDER.socials.map((s) => {
@@ -64,7 +55,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="flex items-center justify-center w-9 h-9 rounded-full border border-white/12 text-white/70 hover:text-white hover:border-editify-accent/50 transition-all"
+                  className="flex items-center justify-center w-9 h-9 rounded-full border border-white/15 text-white/70 hover:text-white hover:border-accent/50 transition-all"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -72,10 +63,10 @@ export default function Footer() {
             })}
           </div>
         </div>
-        <p className="pb-8 text-center text-[12px] text-white/35 leading-relaxed px-4">
-          © {year} Editify · CNPJ 53.169.343/0001-40
+        <p className="pb-9 text-center text-[12px] text-white/40 leading-relaxed px-4">
+          © {year} Editify · CNPJ 53.169.343/0001-40 · desde 2022
           <br />
-          Feito por editores, pra editores.
+          A casa do editor de vídeo brasileiro.
         </p>
       </div>
     </footer>

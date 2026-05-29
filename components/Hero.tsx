@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Star } from "lucide-react";
-import { AVATARS } from "@/lib/site";
+import { ArrowDown } from "lucide-react";
+import { PILLARS } from "@/lib/site";
+import AvatarMarquee from "./AvatarMarquee";
 
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 24 },
@@ -14,122 +15,79 @@ const fadeUp = (delay: number) => ({
   },
 });
 
-const HERO_AVATARS = AVATARS.slice(24, 29); // 5 rostos pro stack
-
 export default function Hero() {
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden min-h-screen flex items-center justify-center"
-    >
-      {/* glow vermelho ambiente */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div
-          className="absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] max-w-full"
-          style={{
-            background:
-              "radial-gradient(circle at center, rgba(227,6,19,0.18) 0%, rgba(227,6,19,0.05) 32%, transparent 62%)",
-            filter: "blur(20px)",
-          }}
-        />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-            maskImage:
-              "radial-gradient(ellipse at center, black 30%, transparent 75%)",
-          }}
-        />
-      </div>
-
-      <div className="relative w-full max-w-5xl mx-auto px-4 md:px-6 text-center pt-28 pb-20">
+    <section id="top" className="relative overflow-hidden pt-32 pb-14 sm:pt-44 sm:pb-20">
+      <div className="relative max-w-5xl mx-auto px-4 md:px-6 text-center">
         <motion.span
           {...fadeUp(0.05)}
-          className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.03] px-4 py-1.5 text-[11px] sm:text-[12px] font-semibold uppercase tracking-[0.2em] text-white/70"
+          className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-soft px-4 py-1.5 text-[11px] sm:text-[12px] font-bold uppercase tracking-[0.18em] text-accent"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-editify-accent animate-pulse" />
-          A casa de quem edita vídeo
+          <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
+          Ecossistema Editify · desde 2022
         </motion.span>
 
         <motion.h1
           {...fadeUp(0.15)}
-          className="mt-7 font-[family-name:var(--font-display)] uppercase text-white tracking-[-0.015em] flex flex-col items-center"
+          className="mt-7 font-[family-name:var(--font-display)] uppercase text-ink leading-[0.9] tracking-[-0.015em] text-[clamp(3rem,9vw,7rem)]"
         >
-          <span className="block leading-[0.9] text-[clamp(3.4rem,10.5vw,7.5rem)]">
-            Edição de vídeo:
-          </span>
-          <span className="block leading-[0.95] mt-3 text-[clamp(1.85rem,5.55vw,4rem)]">
-            O que era hobby{" "}
-            <span className="text-editify-accent">virou carreira</span>
-          </span>
+          A casa do editor
+          <br />
+          <span className="text-accent">de vídeo brasileiro.</span>
         </motion.h1>
 
         <motion.p
           {...fadeUp(0.3)}
-          className="mt-7 mx-auto max-w-[680px] text-[16px] sm:text-[19px] leading-relaxed text-editify-muted"
+          className="mt-7 mx-auto max-w-[660px] text-[16px] sm:text-[19px] leading-relaxed text-muted"
         >
-          A Editify é o ecossistema de quem leva edição a sério.
-          <br className="hidden sm:block" />{" "}
-          Aqui você{" "}
-          <span className="text-white font-semibold">aprende</span>, se conecta
-          e é <span className="text-white font-semibold">contratado</span>.
+          Não é um curso. É o ecossistema inteiro que{" "}
+          <span className="text-ink font-semibold">forma</span>,{" "}
+          <span className="text-ink font-semibold">conecta</span> e{" "}
+          <span className="text-ink font-semibold">emprega</span> o editor — e
+          entrega pro cliente quem edita de verdade.
         </motion.p>
 
+        {/* fluxo do ecossistema */}
         <motion.div
           {...fadeUp(0.45)}
-          className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3"
+          className="mt-9 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-2 text-[13px] sm:text-[14px]"
         >
-          <a
-            href="#solucoes"
-            className="group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 bg-editify-accent text-white font-bold text-[15px] uppercase tracking-wider px-8 py-[18px] rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(227,6,19,0.5)]"
-            style={{ boxShadow: "0 12px 36px rgba(227,6,19,0.35)" }}
-          >
-            Ver o que a Editify faz
-            <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
-          </a>
-          <a
-            href="#fundador"
-            className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-[18px] rounded-xl border border-white/12 text-white/80 font-medium text-[15px] hover:bg-white/5 hover:text-white transition-all"
-          >
-            Quem tá por trás
-          </a>
+          {PILLARS.map((p, i) => (
+            <div key={p.id} className="inline-flex items-center gap-2.5">
+              <a
+                href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 rounded-full bg-white border border-line px-4 py-2 font-semibold text-ink hover:border-accent hover:-translate-y-0.5 transition-all duration-300"
+                style={{ boxShadow: "0 4px 18px rgba(15,15,20,0.05)" }}
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                {p.name}
+              </a>
+              {i < PILLARS.length - 1 && (
+                <span className="text-ink/25 select-none">→</span>
+              )}
+            </div>
+          ))}
         </motion.div>
 
-        {/* Prova social — avatar stack + rating */}
-        <motion.div
-          {...fadeUp(0.6)}
-          className="mt-10 flex items-center justify-center gap-4"
+        <motion.a
+          {...fadeUp(0.55)}
+          href="#numeros"
+          className="mt-10 inline-flex items-center gap-2 text-[13px] font-semibold text-muted hover:text-accent transition-colors"
         >
-          <div className="flex -space-x-3">
-            {HERO_AVATARS.map((src) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                key={src}
-                src={src}
-                alt=""
-                className="w-10 h-10 rounded-full border-2 border-black object-cover bg-editify-surface"
-              />
-            ))}
-          </div>
-          <div className="text-left">
-            <div className="flex items-center gap-1">
-              {[0, 1, 2, 3, 4].map((i) => (
-                <Star
-                  key={i}
-                  className="w-3.5 h-3.5"
-                  style={{ color: "#FFB800", fill: "#FFB800" }}
-                />
-              ))}
-              <span className="ml-1 text-[13px] font-bold text-white">4.92</span>
-            </div>
-            <p className="text-[12px] text-editify-muted">
-              +1.000 editores já formados
-            </p>
-          </div>
-        </motion.div>
+          Conhece a Editify por dentro
+          <ArrowDown className="w-4 h-4 animate-bounce" />
+        </motion.a>
       </div>
+
+      {/* faixa de editores reais */}
+      <motion.div {...fadeUp(0.7)} className="mt-14 sm:mt-20">
+        <AvatarMarquee />
+        <p className="mt-6 text-center text-[13px] sm:text-[14px] text-muted">
+          A nova geração de editores de vídeo do Brasil já tá aqui dentro.
+        </p>
+      </motion.div>
     </section>
   );
 }

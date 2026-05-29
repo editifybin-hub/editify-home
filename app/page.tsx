@@ -1,8 +1,9 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import StatsBand from "@/components/StatsBand";
-import Manifesto from "@/components/Manifesto";
-import Solutions from "@/components/Solutions";
+import Ecosystem from "@/components/Ecosystem";
+import Audiences from "@/components/Audiences";
+import Timeline from "@/components/Timeline";
 import Results from "@/components/Results";
 import Founder from "@/components/Founder";
 import Footer from "@/components/Footer";
@@ -14,8 +15,9 @@ export default function Home() {
       <main>
         <Hero />
         <StatsBand />
-        <Manifesto />
-        <Solutions />
+        <Ecosystem />
+        <Audiences />
+        <Timeline />
         <Results />
         <Founder />
       </main>

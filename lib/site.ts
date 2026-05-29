@@ -1,55 +1,109 @@
 /**
- * Configuração central do site Editify.
- * Edite aqui pra atualizar links, números, depoimentos e dados do fundador.
+ * Configuração central do site institucional da Editify (editify.com.br).
+ * Esta é a página de MARCA / ecossistema — não é landing de venda.
+ * Edite aqui pra atualizar números, pilares, jornada e dados do fundador.
  */
 
-export const SOLUTIONS = [
+export const SINCE_YEAR = 2022;
+export const YEARS_RUNNING = 3; // desde 2022
+
+/** Os 3 pilares do ecossistema (treinamento → comunidade → contratar). */
+export const PILLARS = [
   {
     id: "treinamento",
-    name: "Treinamento Editify",
-    tagline: "Aprenda a editar e a viver disso",
-    description:
-      "Do primeiro corte ao primeiro contrato. O método completo pra você dominar a edição e transformar isso em renda real, mesmo começando do zero.",
-    cta: "Conhecer o treinamento",
+    name: "Treinamento",
+    domain: "treinamento.editify.com.br",
     href: "https://lp.treinamento.editify.com.br",
-    verb: "Aprenda",
-    badge: "O carro-chefe",
-    available: true,
+    step: "01",
+    role: "Onde começa",
+    serves: "pro editor",
+    blurb:
+      "A formação que pega quem nunca abriu um editor e devolve um profissional que vive disso. Do primeiro corte ao primeiro contrato.",
+    metric: { value: "+1.000", label: "editores formados" },
   },
   {
     id: "comunidade",
-    name: "Comunidade Editify",
-    tagline: "Você não edita mais sozinho",
-    description:
-      "Onde os editores se conectam, trocam projeto, dão feedback e crescem juntos. A galera que entende o que você faz e te puxa pra cima.",
-    cta: "Entrar na comunidade",
+    name: "Comunidade",
+    domain: "comunidade.editify.com.br",
     href: "https://comunidade.editify.com.br",
-    verb: "Conecte",
-    badge: null,
-    available: true,
+    step: "02",
+    role: "Onde evolui",
+    serves: "pro editor",
+    blurb:
+      "A casa onde ninguém edita sozinho: estúdios em voz, crítica de corte, ligas de faturamento e XP que vira recompensa de verdade.",
+    metric: { value: "1.100", label: "editores na casa" },
   },
   {
     id: "contratar",
-    name: "Contratar Editify",
-    tagline: "Seja contratado pra editar",
-    description:
-      "Entre pra base de editores da Editify e seja contratado por criadores e empresas que precisam de edição de verdade. Seu trabalho na frente de quem paga.",
-    cta: "Quero ser contratado",
+    name: "Contratar",
+    domain: "contratar.editify.com.br",
     href: "https://contratar.editify.com.br",
-    verb: "Trabalhe",
-    badge: null,
-    available: true,
+    step: "03",
+    role: "Onde trabalha",
+    serves: "editor + cliente",
+    blurb:
+      "O marketplace que liga o editor formado direto ao cliente. Sem agência no meio, sem comissão: o preço cai inteiro no PIX do editor.",
+    metric: { value: "0%", label: "de comissão" },
   },
 ] as const;
 
+/** Números do ecossistema (faixa vermelha de destaque). */
 export const STATS = [
-  { value: "+1.000", label: "editores formados" },
-  { value: "4.92", label: "avaliação média", star: true },
-  { value: "R$15.860", label: "salário médio dos alunos" },
-  { value: "+R$2,2M", label: "movimentados no mercado" },
+  { target: 3, label: "anos de jornada", since: "desde 2022" },
+  { target: 1000, prefix: "+", sep: true, label: "editores formados" },
+  { target: 1100, sep: true, label: "na comunidade" },
+  { target: 4.92, decimals: 2, label: "avaliação média", star: true },
 ] as const;
 
-/** Transformações reais de alunos (antes → depois) */
+/** Os dois lados que o ecossistema atende. */
+export const AUDIENCES = {
+  editor: {
+    tag: "Pro editor",
+    headline: "Vira profissional e nunca mais edita sozinho.",
+    points: [
+      "Aprende a editar do zero e a cobrar pelo que vale",
+      "Evolui numa comunidade que puxa você pra cima",
+      "É contratado direto, sem agência levando sua margem",
+      "Monta um portfólio verificado que o cliente confia",
+    ],
+  },
+  client: {
+    tag: "Pro cliente",
+    headline: "Acha o editor certo sem passar por agência.",
+    points: [
+      "Encontra editor formado e avaliado pela própria casa",
+      "Vê portfólio, estrelas e histórico reais antes de fechar",
+      "Fala direto com o editor, sem intermediário no caminho",
+      "Paga o preço cheio pro editor — 0% de comissão",
+    ],
+  },
+} as const;
+
+/** Linha do tempo da Editify (confira/ajuste as datas se precisar). */
+export const TIMELINE = [
+  {
+    year: "2022",
+    title: "O primeiro corte",
+    text: "A Editify nasce com o Treinamento — edição de vídeo tratada como profissão de verdade, não passatempo.",
+  },
+  {
+    year: "2023",
+    title: "Ninguém edita sozinho",
+    text: "Nasce a Comunidade: estúdios em voz, crítica de corte e uma galera inteira na mesma jornada.",
+  },
+  {
+    year: "2024",
+    title: "Do talento ao trabalho",
+    text: "Chegam o Contratar e o Editfólio. O editor formado vira contratável, com portfólio verificado na frente do cliente.",
+  },
+  {
+    year: "Hoje",
+    title: "Um ecossistema",
+    text: "Treinamento, comunidade e contratação conectados. Mais de mil editores formados — e a casa só cresce.",
+  },
+] as const;
+
+/** Resultados reais de alunos (prova de histórico). */
 export const TRANSFORMATIONS = [
   {
     name: "Alexandre",
@@ -89,19 +143,25 @@ export const TRANSFORMATIONS = [
   },
 ] as const;
 
+/** Métricas de resultado (seção de provas). */
+export const RESULT_STATS = [
+  { value: "R$15.860", label: "salário médio dos alunos" },
+  { value: "4.92", label: "nota média, de 5" },
+  { value: "+1.000", label: "formados e contando" },
+] as const;
+
 export const FOUNDER = {
   name: "Erick Julrich",
   role: "Fundador da Editify",
   photo: "/founder.jpg",
-  // headline curta de autoridade
-  headline: "Saí da escola aos 17 pra editar vídeo. Hoje formo quem faz o mesmo.",
+  headline: "Saí da escola aos 17 pra editar vídeo. Hoje construo a casa de quem faz o mesmo.",
   bio: [
     "Em 2 meses editando, bati R$20.000/mês. Virei diretor de uma agência gringa que faturou mais de R$1 milhão e abri a minha própria, que fez R$450 mil em 6 meses.",
-    "No total, já movimentei mais de R$2,2 milhões no mercado de edição. Criei a Editify pra ser o que eu queria ter tido no começo: a prova de que edição de vídeo é profissão de verdade, e o caminho pra viver dela.",
+    "No total, já movimentei mais de R$2,2 milhões no mercado de edição. Criei a Editify pra ser o que eu queria ter tido no começo: a prova de que edição de vídeo é profissão de verdade — e o ecossistema inteiro pra viver dela.",
   ],
   founderStats: [
-    { value: "R$2,2M+", label: "movimentados no mercado" },
-    { value: "+1.000", label: "editores formados" },
+    { value: "R$2,2M+", label: "movimentados por mim no mercado" },
+    { value: "R$1M+", label: "faturados na agência gringa" },
     { value: "17", label: "anos quando comecei" },
   ],
   socials: [
@@ -118,9 +178,18 @@ export const FOUNDER = {
   ],
 } as const;
 
+/** Toda a família de produtos (rodapé). */
+export const FAMILY = [
+  { name: "Treinamento", href: "https://lp.treinamento.editify.com.br" },
+  { name: "Comunidade", href: "https://comunidade.editify.com.br" },
+  { name: "Contratar", href: "https://contratar.editify.com.br" },
+  { name: "Editfólio", href: "https://folio.editify.com.br" },
+  { name: "Aula Zero", href: "https://aulazero.editify.com.br" },
+] as const;
+
 export const BRAND_SOCIALS = FOUNDER.socials;
 
-/** Avatares reais de alunos pro marquee de prova social */
+/** Avatares reais de editores pro marquee de prova social. */
 export const AVATARS = [
   "_g.o.s.webp", "_medeiros.webp", "acerola7435.webp", "alexandre051473.webp",
   "allis_69.webp", "alvesdrj.webp", "andersonbarbozaa.webp", "arth.editor.webp",
