@@ -72,8 +72,10 @@ export default function Footer() {
             })}
           </div>
         </div>
-        <p className="pb-8 text-center text-[12px] text-white/35">
-          © {year} Editify. Feito por editores, pra editores.
+        <p className="pb-8 text-center text-[12px] text-white/35 leading-relaxed px-4">
+          © {year} Editify · CNPJ 53.169.343/0001-40
+          <br />
+          Feito por editores, pra editores.
         </p>
       </div>
     </footer>

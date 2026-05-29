@@ -8,49 +8,61 @@ export default function Founder() {
   return (
     <section
       id="fundador"
-      className="relative py-24 sm:py-32 scroll-mt-24 border-t border-white/[0.06]"
+      className="relative py-24 sm:py-32 scroll-mt-24 overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(180deg, #0c0c0c 0%, #050505 100%)",
+        borderTop: "1px solid rgba(255,255,255,0.06)",
+      }}
     >
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <div className="grid lg:grid-cols-[0.85fr_1fr] gap-10 lg:gap-16 items-center">
+      {/* glow vermelho atrás da foto */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-20 top-1/4 w-[500px] h-[500px] rounded-full"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(227,6,19,0.14) 0%, transparent 70%)",
+          filter: "blur(40px)",
+        }}
+      />
+
+      <div className="relative max-w-6xl mx-auto px-4 md:px-6">
+        <div className="grid lg:grid-cols-[0.8fr_1fr] gap-10 lg:gap-16 items-center">
           {/* Foto */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7 }}
-            className="relative order-first"
+            className="relative"
           >
             <div
-              className="relative w-full aspect-[4/5] max-w-[420px] mx-auto lg:mx-0 rounded-[28px] overflow-hidden"
-              style={{
-                background:
-                  "linear-gradient(180deg, #121212 0%, #070707 100%)",
-                border: "1px solid rgba(255,255,255,0.08)",
-              }}
+              className="relative w-full aspect-[4/5] max-w-[440px] mx-auto lg:mx-0 rounded-[28px] overflow-hidden"
+              style={{ border: "1px solid rgba(255,255,255,0.1)" }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={FOUNDER.photo}
                 alt={FOUNDER.name}
                 className="absolute inset-0 w-full h-full object-cover"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.display = "none";
-                }}
               />
-              {/* fallback / overlay quando não há foto */}
-              <div className="absolute inset-0 flex items-center justify-center text-center px-6">
-                <span className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,8vw,4rem)] leading-[0.9] uppercase text-white/10">
-                  {FOUNDER.name}
-                </span>
-              </div>
               <div
                 aria-hidden
-                className="absolute inset-x-0 bottom-0 h-1/3"
+                className="absolute inset-x-0 bottom-0 h-2/5"
                 style={{
                   background:
-                    "linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.6) 100%)",
+                    "linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.85) 100%)",
                 }}
               />
+              {/* nome sobre a foto */}
+              <div className="absolute inset-x-0 bottom-0 p-6">
+                <p className="font-[family-name:var(--font-display)] text-[32px] leading-none uppercase text-white">
+                  {FOUNDER.name}
+                </p>
+                <p className="mt-1 text-[12px] font-semibold uppercase tracking-[0.14em] text-editify-accent">
+                  {FOUNDER.role}
+                </p>
+              </div>
             </div>
           </motion.div>
 
@@ -71,20 +83,11 @@ export default function Founder() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: 0.08 }}
-              className="mt-4 font-[family-name:var(--font-display)] uppercase text-white leading-[0.96] tracking-[-0.01em] text-[clamp(2rem,5.5vw,3.5rem)]"
+              className="mt-4 font-[family-name:var(--font-display)] uppercase text-white leading-[0.98] tracking-[-0.01em] text-[clamp(1.85rem,4.5vw,3rem)]"
+              style={{ textWrap: "balance" }}
             >
-              {FOUNDER.name}
+              {FOUNDER.headline}
             </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: 0.14 }}
-              className="mt-1 text-[14px] font-semibold uppercase tracking-[0.12em] text-white/50"
-            >
-              {FOUNDER.role}
-            </motion.p>
 
             <div className="mt-6 space-y-4 max-w-[560px]">
               {FOUNDER.bio.map((p, i) => (
@@ -93,19 +96,42 @@ export default function Founder() {
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
-                  className="text-[16px] leading-relaxed text-editify-muted"
+                  transition={{ duration: 0.6, delay: 0.16 + i * 0.1 }}
+                  className="text-[15px] sm:text-[16px] leading-relaxed text-editify-muted"
                 >
                   {p}
                 </motion.p>
               ))}
             </div>
 
+            {/* Números de autoridade */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.36 }}
+              className="mt-8 grid grid-cols-3 gap-4 max-w-[520px]"
+            >
+              {FOUNDER.founderStats.map((st) => (
+                <div
+                  key={st.label}
+                  className="rounded-2xl bg-white/[0.03] border border-white/8 p-4"
+                >
+                  <div className="font-[family-name:var(--font-display)] text-[clamp(1.6rem,3vw,2.25rem)] leading-none text-editify-accent">
+                    {st.value}
+                  </div>
+                  <p className="mt-1.5 text-[11px] sm:text-[12px] text-editify-muted leading-snug">
+                    {st.label}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: 0.46 }}
               className="mt-8 flex flex-wrap gap-3"
             >
               {FOUNDER.socials.map((s) => {

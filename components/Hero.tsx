@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Star } from "lucide-react";
+import { AVATARS } from "@/lib/site";
 
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 24 },
@@ -13,6 +14,8 @@ const fadeUp = (delay: number) => ({
   },
 });
 
+const HERO_AVATARS = AVATARS.slice(24, 29); // 5 rostos pro stack
+
 export default function Hero() {
   return (
     <section
@@ -22,14 +25,13 @@ export default function Hero() {
       {/* glow vermelho ambiente */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div
-          className="absolute left-1/2 top-[35%] -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[1100px] max-w-full"
+          className="absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] max-w-full"
           style={{
             background:
-              "radial-gradient(circle at center, rgba(227,6,19,0.16) 0%, rgba(227,6,19,0.05) 32%, transparent 62%)",
+              "radial-gradient(circle at center, rgba(227,6,19,0.18) 0%, rgba(227,6,19,0.05) 32%, transparent 62%)",
             filter: "blur(20px)",
           }}
         />
-        {/* grade sutil */}
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -47,13 +49,13 @@ export default function Hero() {
           {...fadeUp(0.05)}
           className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.03] px-4 py-1.5 text-[11px] sm:text-[12px] font-semibold uppercase tracking-[0.2em] text-white/70"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-editify-accent" />
+          <span className="h-1.5 w-1.5 rounded-full bg-editify-accent animate-pulse" />
           A casa de quem edita vídeo
         </motion.span>
 
         <motion.h1
           {...fadeUp(0.15)}
-          className="mt-7 font-[family-name:var(--font-display)] uppercase text-white leading-[0.92] tracking-[-0.01em] text-[clamp(2.75rem,9vw,6.5rem)]"
+          className="mt-7 font-[family-name:var(--font-display)] uppercase text-white leading-[0.9] tracking-[-0.01em] text-[clamp(2.85rem,9.5vw,7rem)]"
         >
           Edição de vídeo
           <br />
@@ -64,7 +66,7 @@ export default function Hero() {
 
         <motion.p
           {...fadeUp(0.3)}
-          className="mt-7 mx-auto max-w-[640px] text-[16px] sm:text-[19px] leading-relaxed text-editify-muted"
+          className="mt-7 mx-auto max-w-[620px] text-[16px] sm:text-[19px] leading-relaxed text-editify-muted"
           style={{ textWrap: "balance" }}
         >
           A Editify é o ecossistema de quem leva edição a sério. Aqui você{" "}
@@ -73,12 +75,12 @@ export default function Hero() {
           <span className="text-white font-semibold">
             contratado pra trabalhar
           </span>
-          . Tudo num lugar só.
+          .
         </motion.p>
 
         <motion.div
           {...fadeUp(0.45)}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3"
+          className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3"
         >
           <a
             href="#solucoes"
@@ -94,6 +96,39 @@ export default function Hero() {
           >
             Quem tá por trás
           </a>
+        </motion.div>
+
+        {/* Prova social — avatar stack + rating */}
+        <motion.div
+          {...fadeUp(0.6)}
+          className="mt-10 flex items-center justify-center gap-4"
+        >
+          <div className="flex -space-x-3">
+            {HERO_AVATARS.map((src) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={src}
+                src={src}
+                alt=""
+                className="w-10 h-10 rounded-full border-2 border-black object-cover bg-editify-surface"
+              />
+            ))}
+          </div>
+          <div className="text-left">
+            <div className="flex items-center gap-1">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <Star
+                  key={i}
+                  className="w-3.5 h-3.5"
+                  style={{ color: "#FFB800", fill: "#FFB800" }}
+                />
+              ))}
+              <span className="ml-1 text-[13px] font-bold text-white">4.92</span>
+            </div>
+            <p className="text-[12px] text-editify-muted">
+              +1.000 editores já formados
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

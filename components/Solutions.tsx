@@ -11,8 +11,21 @@ const ICONS = {
 } as const;
 
 export default function Solutions() {
+  const featured = SOLUTIONS[0];
+  const rest = SOLUTIONS.slice(1);
+  const FeaturedIcon = ICONS[featured.id];
+
   return (
-    <section id="solucoes" className="relative py-24 sm:py-32 scroll-mt-24">
+    <section
+      id="solucoes"
+      className="relative py-24 sm:py-32 scroll-mt-24"
+      style={{
+        background:
+          "linear-gradient(180deg, #0c0c0c 0%, #050505 100%)",
+        borderTop: "1px solid rgba(255,255,255,0.06)",
+        borderBottom: "1px solid rgba(255,255,255,0.06)",
+      }}
+    >
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         <div className="max-w-2xl">
           <motion.p
@@ -37,8 +50,61 @@ export default function Solutions() {
           </motion.h2>
         </div>
 
-        <div className="mt-14 grid gap-5 lg:grid-cols-3">
-          {SOLUTIONS.map((s, i) => {
+        <div className="mt-14 grid gap-5 lg:grid-cols-2">
+          {/* Card destaque — Treinamento */}
+          <motion.a
+            href={featured.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6 }}
+            className="group relative flex flex-col rounded-[28px] p-8 sm:p-10 overflow-hidden transition-all duration-300 hover:-translate-y-1 lg:row-span-2"
+            style={{
+              background:
+                "linear-gradient(160deg, #1a0305 0%, #0a0a0a 65%)",
+              border: "1px solid rgba(227,6,19,0.4)",
+            }}
+          >
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -top-20 -right-10 w-80 h-80 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(227,6,19,0.3) 0%, transparent 70%)",
+                filter: "blur(30px)",
+              }}
+            />
+            <div className="relative flex items-center justify-between">
+              <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-editify-accent text-white">
+                <FeaturedIcon className="w-7 h-7" strokeWidth={1.8} />
+              </div>
+              {featured.badge && (
+                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-editify-accent bg-editify-accent/12 border border-editify-accent/30 px-3 py-1.5 rounded-full">
+                  {featured.badge}
+                </span>
+              )}
+            </div>
+
+            <h3 className="relative mt-8 font-[family-name:var(--font-display)] text-[34px] sm:text-[44px] leading-[0.95] uppercase text-white">
+              {featured.name}
+            </h3>
+            <p className="relative mt-3 text-[17px] sm:text-[19px] font-semibold text-white">
+              {featured.tagline}
+            </p>
+            <p className="relative mt-3 text-[15px] leading-relaxed text-editify-muted max-w-md">
+              {featured.description}
+            </p>
+
+            <span className="relative mt-auto pt-8 inline-flex items-center gap-2 text-[15px] font-bold text-white group-hover:text-editify-accent transition-colors">
+              {featured.cta}
+              <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </span>
+          </motion.a>
+
+          {/* Cards menores */}
+          {rest.map((s, i) => {
             const Icon = ICONS[s.id];
             return (
               <motion.a
@@ -49,25 +115,23 @@ export default function Solutions() {
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, delay: i * 0.12 }}
+                transition={{ duration: 0.6, delay: 0.12 + i * 0.1 }}
                 className="group relative flex flex-col rounded-[24px] p-7 sm:p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1"
                 style={{
                   background:
-                    "linear-gradient(180deg, #101010 0%, #070707 100%)",
+                    "linear-gradient(180deg, #131313 0%, #0a0a0a 100%)",
                   border: "1px solid rgba(255,255,255,0.08)",
                 }}
               >
-                {/* glow on hover */}
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  className="pointer-events-none absolute -top-16 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{
                     background:
-                      "radial-gradient(circle, rgba(227,6,19,0.22) 0%, transparent 70%)",
+                      "radial-gradient(circle, rgba(227,6,19,0.2) 0%, transparent 70%)",
                     filter: "blur(20px)",
                   }}
                 />
-
                 <div className="relative flex items-center justify-between">
                   <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-editify-accent/12 text-editify-accent">
                     <Icon className="w-6 h-6" strokeWidth={1.8} />
@@ -76,18 +140,16 @@ export default function Solutions() {
                     {s.verb}
                   </span>
                 </div>
-
-                <h3 className="relative mt-6 font-[family-name:var(--font-display)] text-[26px] sm:text-[28px] leading-none uppercase text-white">
+                <h3 className="relative mt-5 font-[family-name:var(--font-display)] text-[26px] leading-none uppercase text-white">
                   {s.name}
                 </h3>
                 <p className="relative mt-2 text-[15px] font-semibold text-white/85">
                   {s.tagline}
                 </p>
-                <p className="relative mt-3 text-[14px] leading-relaxed text-editify-muted flex-1">
+                <p className="relative mt-2.5 text-[14px] leading-relaxed text-editify-muted flex-1">
                   {s.description}
                 </p>
-
-                <span className="relative mt-7 inline-flex items-center gap-1.5 text-[14px] font-bold text-white group-hover:text-editify-accent transition-colors">
+                <span className="relative mt-6 inline-flex items-center gap-1.5 text-[14px] font-bold text-white group-hover:text-editify-accent transition-colors">
                   {s.cta}
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>
