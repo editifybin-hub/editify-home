@@ -66,12 +66,14 @@ export default function Ecosystem() {
                     {p.lead}
                   </h3>
 
-                  <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1">
-                    <span className="inline-flex items-center gap-2 text-[15px] font-bold text-ink">
-                      <span className="h-2 w-2 rounded-full bg-accent" />
+                  <div className="mt-5 flex flex-wrap items-center gap-3">
+                    <span className="inline-flex items-center gap-2.5 text-[20px] sm:text-[22px] font-bold text-ink">
+                      <span className="h-2.5 w-2.5 rounded-full bg-accent" />
                       {p.name}
                     </span>
-                    <span className="text-[13px] text-muted">{p.domain}</span>
+                    <span className="inline-flex items-center rounded-full bg-accent-soft text-accent text-[13px] sm:text-[14px] font-semibold px-3 py-1.5">
+                      {p.domain}
+                    </span>
                   </div>
 
                   <p className="mt-5 max-w-2xl text-[16px] sm:text-[18px] text-muted leading-relaxed">

@@ -133,7 +133,7 @@ export const TRANSFORMATIONS = [
     name: "Marlon",
     age: 21,
     avatar: "/avatars/Marlon.png",
-    before: "R$1.500",
+    before: "R$12.000",
     after: "R$15.000",
     quote: "Já entrei com experiência, mas ainda assim aprendi muito.",
     featured: false,

@@ -47,15 +47,6 @@ export default function Hero() {
           editores profissionais.
         </motion.p>
 
-        <motion.p
-          {...fadeUp(0.38)}
-          className="mt-4 mx-auto max-w-[600px] text-[15px] sm:text-[16px] text-muted leading-relaxed"
-        >
-          Na prática: aqui você aprende a editar, entra numa comunidade de
-          editores e consegue clientes que pagam pelo seu trabalho. Tudo no
-          mesmo lugar.
-        </motion.p>
-
         {/* fluxo do ecossistema */}
         <motion.div
           {...fadeUp(0.45)}
