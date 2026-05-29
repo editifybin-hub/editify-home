@@ -55,19 +55,23 @@ export default function Hero() {
 
         <motion.h1
           {...fadeUp(0.15)}
-          className="mt-7 font-[family-name:var(--font-display)] uppercase text-white leading-[0.92] tracking-[-0.01em] text-[clamp(2.75rem,8.5vw,6.25rem)]"
+          className="mt-7 font-[family-name:var(--font-display)] uppercase text-white tracking-[-0.015em] flex flex-col items-center"
         >
-          Edição de vídeo não é hobby.
-          <br />
-          <span className="text-editify-accent">É carreira.</span>
+          <span className="block leading-[0.86] text-[clamp(3.4rem,11.2vw,8rem)]">
+            Edição de vídeo
+          </span>
+          <span className="block leading-[0.9] text-[clamp(2.15rem,7vw,5rem)]">
+            Não é hobby.{" "}
+            <span className="text-editify-accent">É carreira.</span>
+          </span>
         </motion.h1>
 
         <motion.p
           {...fadeUp(0.3)}
-          className="mt-7 mx-auto max-w-[560px] text-[16px] sm:text-[19px] leading-relaxed text-editify-muted"
+          className="mt-7 mx-auto max-w-[620px] text-[16px] sm:text-[19px] leading-relaxed text-editify-muted"
           style={{ textWrap: "balance" }}
         >
-          O ecossistema de quem leva edição a sério. Aqui você{" "}
+          A Editify é o ecossistema de quem leva edição a sério. Aqui você{" "}
           <span className="text-white font-semibold">aprende</span>, se conecta
           e é <span className="text-white font-semibold">contratado</span>.
         </motion.p>
