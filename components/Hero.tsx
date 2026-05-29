@@ -57,12 +57,12 @@ export default function Hero() {
           {...fadeUp(0.15)}
           className="mt-7 font-[family-name:var(--font-display)] uppercase text-white tracking-[-0.015em] flex flex-col items-center"
         >
-          <span className="block leading-[0.86] text-[clamp(3.4rem,11.2vw,8rem)]">
-            Edição de vídeo
+          <span className="block leading-[0.9] text-[clamp(3.4rem,10.5vw,7.5rem)]">
+            Edição de vídeo:
           </span>
-          <span className="block leading-[0.9] text-[clamp(2.15rem,7vw,5rem)]">
-            Não é hobby.{" "}
-            <span className="text-editify-accent">É carreira.</span>
+          <span className="block leading-[0.95] mt-3 text-[clamp(1.85rem,5.55vw,4rem)]">
+            O que era hobby{" "}
+            <span className="text-editify-accent">virou carreira</span>
           </span>
         </motion.h1>
 
