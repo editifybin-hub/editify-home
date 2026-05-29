@@ -13,9 +13,6 @@ const fadeUp = (delay: number) => ({
   },
 });
 
-// Palavras que rolam no "verbo" do hero
-const WORDS = ["editar", "crescer", "ser pago", "viver disso"];
-
 export default function Hero() {
   return (
     <section
@@ -70,10 +67,13 @@ export default function Hero() {
           className="mt-7 mx-auto max-w-[640px] text-[16px] sm:text-[19px] leading-relaxed text-editify-muted"
           style={{ textWrap: "balance" }}
         >
-          A Editify é o ecossistema de quem leva edição a sério. A gente te
-          ensina a{" "}
-          <FlipWord />, te conecta com outros editores e te coloca pra
-          trabalhar. Tudo num lugar só.
+          A Editify é o ecossistema de quem leva edição a sério. Aqui você{" "}
+          <span className="text-white font-semibold">aprende a editar</span>, se
+          conecta com outros editores e é{" "}
+          <span className="text-white font-semibold">
+            contratado pra trabalhar
+          </span>
+          . Tudo num lugar só.
         </motion.p>
 
         <motion.div
@@ -97,33 +97,5 @@ export default function Hero() {
         </motion.div>
       </div>
     </section>
-  );
-}
-
-function FlipWord() {
-  return (
-    <span className="relative inline-grid align-baseline">
-      {WORDS.map((w, i) => (
-        <motion.span
-          key={w}
-          className="row-start-1 col-start-1 font-semibold text-white whitespace-nowrap"
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: [0, 1, 1, 0], y: [8, 0, 0, -8] }}
-          transition={{
-            duration: 2.4,
-            delay: i * 2.4,
-            repeat: Infinity,
-            repeatDelay: (WORDS.length - 1) * 2.4,
-            ease: "easeInOut",
-          }}
-        >
-          {w}
-        </motion.span>
-      ))}
-      {/* reserva espaço pro maior termo */}
-      <span className="invisible font-semibold whitespace-nowrap">
-        viver disso
-      </span>
-    </span>
   );
 }

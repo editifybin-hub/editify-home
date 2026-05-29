@@ -29,9 +29,9 @@ export default function Manifesto() {
           transition={{ duration: 0.6, delay: 0.08 }}
           className="mt-5 text-center font-[family-name:var(--font-display)] uppercase text-white leading-[0.98] tracking-[-0.01em] text-[clamp(2rem,5.5vw,3.75rem)]"
         >
-          Ninguém vira pro <span className="text-editify-accent">do dia pra noite.</span>
+          Ninguém vira profissional da noite pro dia.
           <br className="hidden sm:block" />
-          Mas tem um caminho.
+          <span className="text-editify-accent">Mas tem um caminho.</span>
         </motion.h2>
 
         <div className="mt-14 grid gap-px sm:grid-cols-3 rounded-3xl overflow-hidden border border-white/[0.07] bg-white/[0.04]">
