@@ -19,7 +19,7 @@ const bebasNeue = Bebas_Neue({
 export const metadata: Metadata = {
   title: "Editify | A casa de quem edita vídeo",
   description:
-    "Editify é o ecossistema de quem leva edição de vídeo a sério. Aprenda, conecte-se e seja contratado — tudo num lugar só.",
+    "Editify é o ecossistema de quem leva edição de vídeo a sério. Aprenda, conecte-se e seja contratado. Tudo num lugar só.",
   metadataBase: new URL("https://editify.com.br"),
   icons: {
     icon: "/favicon.png",

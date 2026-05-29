@@ -9,7 +9,7 @@ export const SOLUTIONS = [
     name: "Treinamento Editify",
     tagline: "Aprenda a editar e a viver disso",
     description:
-      "Do primeiro corte ao primeiro contrato. O método completo pra você dominar a edição e transformar isso em renda real — mesmo começando do zero.",
+      "Do primeiro corte ao primeiro contrato. O método completo pra você dominar a edição e transformar isso em renda real, mesmo começando do zero.",
     cta: "Conhecer o treinamento",
     href: "https://lp.treinamento.editify.com.br",
     verb: "Aprenda",
@@ -21,7 +21,7 @@ export const SOLUTIONS = [
     name: "Comunidade Editify",
     tagline: "Você não edita mais sozinho",
     description:
-      "Onde os editores se conectam, trocam projeto, dão feedback e crescem juntos. A galera que entende o que você faz — e te puxa pra cima.",
+      "Onde os editores se conectam, trocam projeto, dão feedback e crescem juntos. A galera que entende o que você faz e te puxa pra cima.",
     cta: "Entrar na comunidade",
     href: "https://comunidade.editify.com.br",
     verb: "Conecte",
@@ -97,7 +97,7 @@ export const FOUNDER = {
   headline: "Saí da escola aos 17 pra editar vídeo. Hoje formo quem faz o mesmo.",
   bio: [
     "Em 2 meses editando, bati R$20.000/mês. Virei diretor de uma agência gringa que faturou mais de R$1 milhão e abri a minha própria, que fez R$450 mil em 6 meses.",
-    "No total, já movimentei mais de R$2,2 milhões no mercado de edição. Criei a Editify pra ser o que eu queria ter tido no começo: a prova de que edição de vídeo é profissão de verdade — e o caminho pra viver dela.",
+    "No total, já movimentei mais de R$2,2 milhões no mercado de edição. Criei a Editify pra ser o que eu queria ter tido no começo: a prova de que edição de vídeo é profissão de verdade, e o caminho pra viver dela.",
   ],
   founderStats: [
     { value: "R$2,2M+", label: "movimentados no mercado" },

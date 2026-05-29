@@ -39,19 +39,16 @@ export default function Nav() {
           <a
             href="#top"
             aria-label="Editify"
-            className="shrink-0 inline-flex items-center gap-2.5"
+            className="shrink-0 inline-flex items-center"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/icon.png"
               alt="Editify"
-              width={36}
-              height={36}
-              className="h-8 w-8 sm:h-9 sm:w-9 object-contain"
+              width={40}
+              height={40}
+              className="h-9 w-9 sm:h-10 sm:w-10 object-contain"
             />
-            <span className="font-[family-name:var(--font-display)] text-[20px] sm:text-[22px] tracking-tight text-white leading-none">
-              EDITIFY
-            </span>
           </a>
 
           <nav className="hidden md:flex items-center gap-7">

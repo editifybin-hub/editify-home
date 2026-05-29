@@ -49,25 +49,76 @@ export default function Results() {
           </motion.h2>
         </div>
 
-        {/* Cards de transformação — featured grande + 3 menores */}
-        <div className="mt-14 grid gap-5 lg:grid-cols-12">
-          {TRANSFORMATIONS.map((t, i) => (
+        {/* Banner destaque (Alexandre) */}
+        {TRANSFORMATIONS.filter((t) => t.featured).map((t) => (
+          <motion.div
+            key={t.name}
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="relative mt-14 rounded-3xl overflow-hidden p-7 sm:p-9 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10"
+            style={{
+              background: "linear-gradient(120deg, #1a0305 0%, #0a0a0a 70%)",
+              border: "1px solid rgba(227,6,19,0.4)",
+            }}
+          >
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -top-16 -left-10 w-72 h-72 rounded-full"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(227,6,19,0.22) 0%, transparent 70%)",
+                filter: "blur(30px)",
+              }}
+            />
+            <div className="relative flex items-center gap-3 lg:w-48 shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={t.avatar}
+                alt={t.name}
+                className="w-14 h-14 rounded-full object-cover border-2 border-white/10 bg-editify-surface"
+              />
+              <div>
+                <p className="font-semibold text-white leading-tight">
+                  {t.name}
+                </p>
+                <p className="text-[13px] text-editify-muted">{t.age} anos</p>
+              </div>
+            </div>
+
+            <div className="relative flex items-baseline gap-3 flex-1">
+              <span className="text-[15px] text-white/40 line-through">
+                {t.before}
+              </span>
+              <ArrowRight className="w-5 h-5 text-editify-accent self-center" />
+              <span className="font-[family-name:var(--font-display)] text-white leading-none text-[clamp(3rem,7vw,4.75rem)]">
+                {t.after}
+              </span>
+              <span className="text-[14px] font-medium text-editify-muted">
+                /mês
+              </span>
+            </div>
+
+            <p className="relative text-editify-muted leading-relaxed text-[15px] sm:text-[16px] lg:max-w-[260px] lg:border-l lg:border-white/10 lg:pl-6">
+              “{t.quote}”
+            </p>
+          </motion.div>
+        ))}
+
+        {/* 3 cards iguais */}
+        <div className="mt-5 grid gap-5 sm:grid-cols-3">
+          {TRANSFORMATIONS.filter((t) => !t.featured).map((t, i) => (
             <motion.div
               key={t.name}
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`relative rounded-3xl overflow-hidden p-7 sm:p-8 flex flex-col ${
-                t.featured ? "lg:col-span-6 lg:row-span-2" : "lg:col-span-6"
-              }`}
+              className="relative rounded-3xl overflow-hidden p-6 sm:p-7 flex flex-col"
               style={{
-                background: t.featured
-                  ? "linear-gradient(160deg, #1a0305 0%, #0a0a0a 60%)"
-                  : "linear-gradient(180deg, #101010 0%, #070707 100%)",
-                border: t.featured
-                  ? "1px solid rgba(227,6,19,0.35)"
-                  : "1px solid rgba(255,255,255,0.08)",
+                background: "linear-gradient(180deg, #101010 0%, #070707 100%)",
+                border: "1px solid rgba(255,255,255,0.08)",
               }}
             >
               <div className="flex items-center gap-3">
@@ -75,44 +126,30 @@ export default function Results() {
                 <img
                   src={t.avatar}
                   alt={t.name}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-white/10 bg-editify-surface"
+                  className="w-11 h-11 rounded-full object-cover border-2 border-white/10 bg-editify-surface"
                 />
                 <div>
-                  <p className="font-semibold text-white leading-tight">
+                  <p className="font-semibold text-white leading-tight text-[15px]">
                     {t.name}
                   </p>
-                  <p className="text-[13px] text-editify-muted">
-                    {t.age} anos
-                  </p>
+                  <p className="text-[12px] text-editify-muted">{t.age} anos</p>
                 </div>
               </div>
 
-              <div
-                className={`flex items-center gap-3 ${t.featured ? "mt-8" : "mt-6"}`}
-              >
-                <span className="text-[15px] text-white/40 line-through">
+              <div className="mt-5 flex items-baseline gap-2">
+                <span className="text-[13px] text-white/40 line-through">
                   {t.before}
                 </span>
-                <ArrowRight className="w-4 h-4 text-editify-accent" />
-                <span
-                  className={`font-[family-name:var(--font-display)] text-white leading-none ${
-                    t.featured
-                      ? "text-[clamp(3rem,7vw,5rem)]"
-                      : "text-[clamp(2rem,4vw,2.75rem)]"
-                  }`}
-                >
+                <ArrowRight className="w-3.5 h-3.5 text-editify-accent self-center" />
+                <span className="font-[family-name:var(--font-display)] text-white leading-none text-[clamp(1.9rem,4vw,2.5rem)]">
                   {t.after}
-                  <span className="text-[14px] font-sans font-medium text-editify-muted">
-                    /mês
-                  </span>
+                </span>
+                <span className="text-[12px] font-medium text-editify-muted">
+                  /mês
                 </span>
               </div>
 
-              <p
-                className={`mt-auto pt-6 text-editify-muted leading-relaxed ${
-                  t.featured ? "text-[16px] sm:text-[17px]" : "text-[14px]"
-                }`}
-              >
+              <p className="mt-4 text-[13px] leading-relaxed text-editify-muted">
                 “{t.quote}”
               </p>
             </motion.div>
