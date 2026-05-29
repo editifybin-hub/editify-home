@@ -35,8 +35,11 @@ export default function Nav() {
           <a href="#top" aria-label="Editify" className="shrink-0 inline-flex items-center gap-2.5">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/favicon.png" alt="Editify" width={32} height={32} className="h-8 w-8 object-contain" />
-            <span className="font-[family-name:var(--font-display)] text-[22px] leading-none tracking-tight text-ink">
-              EDITIFY
+            <span
+              className="text-[20px] font-bold leading-none text-ink"
+              style={{ fontFamily: "Helvetica, 'Helvetica Neue', Arial, sans-serif", letterSpacing: "-0.02em" }}
+            >
+              Editify
             </span>
           </a>
 

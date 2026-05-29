@@ -29,22 +29,31 @@ export default function Hero() {
 
         <motion.h1
           {...fadeUp(0.15)}
-          className="mt-7 font-[family-name:var(--font-display)] uppercase text-ink leading-[0.9] tracking-[-0.015em] text-[clamp(3rem,9vw,7rem)]"
+          className="mt-7 font-[family-name:var(--font-display)] uppercase text-ink tracking-[-0.015em] flex flex-col items-center"
         >
-          A casa do editor
-          <br />
-          <span className="text-accent">de vídeo brasileiro.</span>
+          <span className="block leading-[0.9] text-[clamp(3rem,9vw,6.5rem)]">
+            Edição de vídeos:
+          </span>
+          <span className="block leading-[1] mt-2 text-[clamp(1.65rem,4.6vw,3.25rem)]">
+            o que era hobby <span className="text-accent">virou profissão</span>
+          </span>
         </motion.h1>
 
         <motion.p
           {...fadeUp(0.3)}
-          className="mt-7 mx-auto max-w-[660px] text-[16px] sm:text-[19px] leading-relaxed text-muted"
+          className="mt-7 mx-auto max-w-[640px] text-[clamp(1.05rem,2.4vw,1.45rem)] font-semibold text-ink leading-snug"
         >
-          Não é um curso. É o ecossistema inteiro que{" "}
-          <span className="text-ink font-semibold">forma</span>,{" "}
-          <span className="text-ink font-semibold">conecta</span> e{" "}
-          <span className="text-ink font-semibold">emprega</span> o editor — e
-          entrega pro cliente quem edita de verdade.
+          A Editify é um ecossistema inteiro que forma, conecta e emprega
+          editores profissionais.
+        </motion.p>
+
+        <motion.p
+          {...fadeUp(0.38)}
+          className="mt-4 mx-auto max-w-[600px] text-[15px] sm:text-[16px] text-muted leading-relaxed"
+        >
+          Na prática: aqui você aprende a editar, entra numa comunidade de
+          editores e consegue clientes que pagam pelo seu trabalho. Tudo no
+          mesmo lugar.
         </motion.p>
 
         {/* fluxo do ecossistema */}

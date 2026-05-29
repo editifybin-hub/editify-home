@@ -1,13 +1,13 @@
 /**
  * Configuração central do site institucional da Editify (editify.com.br).
- * Esta é a página de MARCA / ecossistema — não é landing de venda.
- * Edite aqui pra atualizar números, pilares, jornada e dados do fundador.
+ * Esta é a página institucional de marca (ecossistema), sem foco em venda.
+ * Copy pensada pra topo de funil: quem chega aqui não conhece nada.
  */
 
 export const SINCE_YEAR = 2022;
-export const YEARS_RUNNING = 3; // desde 2022
+export const YEARS_RUNNING = 4; // 2022 a 2026
 
-/** Os 3 pilares do ecossistema (treinamento → comunidade → contratar). */
+/** Os 3 passos do ecossistema (aprende → cresce → trabalha). */
 export const PILLARS = [
   {
     id: "treinamento",
@@ -15,11 +15,10 @@ export const PILLARS = [
     domain: "treinamento.editify.com.br",
     href: "https://lp.treinamento.editify.com.br",
     step: "01",
-    role: "Onde começa",
-    serves: "pro editor",
+    lead: "Primeiro, você aprende a editar.",
     blurb:
-      "A formação que pega quem nunca abriu um editor e devolve um profissional que vive disso. Do primeiro corte ao primeiro contrato.",
-    metric: { value: "+1.000", label: "editores formados" },
+      "Um treinamento que ensina edição de vídeo do zero, mesmo se você nunca abriu um programa de edição na vida. Você aprende a editar bem e também a achar clientes e cobrar pelo seu trabalho.",
+    metric: { value: "1.032", label: "pessoas já formadas" },
   },
   {
     id: "comunidade",
@@ -27,11 +26,10 @@ export const PILLARS = [
     domain: "comunidade.editify.com.br",
     href: "https://comunidade.editify.com.br",
     step: "02",
-    role: "Onde evolui",
-    serves: "pro editor",
+    lead: "Aí você entra pra comunidade.",
     blurb:
-      "A casa onde ninguém edita sozinho: estúdios em voz, crítica de corte, ligas de faturamento e XP que vira recompensa de verdade.",
-    metric: { value: "1.100", label: "editores na casa" },
+      "Um grupo com mais de mil editores que se ajudam todo dia. Você mostra seus vídeos, recebe dicas de quem já manda bem, tira dúvidas e faz amizade com gente que tá na mesma que você.",
+    metric: { value: "1.193", label: "editores na comunidade" },
   },
   {
     id: "contratar",
@@ -39,67 +37,66 @@ export const PILLARS = [
     domain: "contratar.editify.com.br",
     href: "https://contratar.editify.com.br",
     step: "03",
-    role: "Onde trabalha",
-    serves: "editor + cliente",
+    lead: "E no fim, você acha clientes.",
     blurb:
-      "O marketplace que liga o editor formado direto ao cliente. Sem agência no meio, sem comissão: o preço cai inteiro no PIX do editor.",
-    metric: { value: "0%", label: "de comissão" },
+      "Um site onde empresas e criadores de conteúdo procuram editores pra contratar. Você cria seu perfil, aparece pra eles e fecha o trabalho direto. O dinheiro cai inteiro pra você, sem ninguém ficar com uma parte.",
+    metric: { value: "0%", label: "de comissão, você recebe tudo" },
   },
 ] as const;
 
 /** Números do ecossistema (faixa vermelha de destaque). */
 export const STATS = [
-  { target: 3, label: "anos de jornada", since: "desde 2022" },
-  { target: 1000, prefix: "+", sep: true, label: "editores formados" },
-  { target: 1100, sep: true, label: "na comunidade" },
+  { target: 4, label: "anos de jornada", since: "desde 2022" },
+  { target: 1032, sep: true, label: "editores formados" },
+  { target: 1193, sep: true, label: "na comunidade" },
   { target: 4.92, decimals: 2, label: "avaliação média", star: true },
 ] as const;
 
 /** Os dois lados que o ecossistema atende. */
 export const AUDIENCES = {
   editor: {
-    tag: "Pro editor",
-    headline: "Vira profissional e nunca mais edita sozinho.",
+    tag: "Pra quem edita",
+    headline: "Você aprende a editar e a viver disso.",
     points: [
-      "Aprende a editar do zero e a cobrar pelo que vale",
-      "Evolui numa comunidade que puxa você pra cima",
-      "É contratado direto, sem agência levando sua margem",
-      "Monta um portfólio verificado que o cliente confia",
+      "Aprende a editar do zero, mesmo sem nunca ter feito",
+      "Cresce junto com outros editores que te ajudam",
+      "Consegue clientes sem ninguém ficar com parte do seu dinheiro",
+      "Monta uma página pra mostrar seu trabalho e atrair clientes",
     ],
   },
   client: {
-    tag: "Pro cliente",
-    headline: "Acha o editor certo sem passar por agência.",
+    tag: "Pra quem contrata",
+    headline: "Você acha um bom editor sem dor de cabeça.",
     points: [
-      "Encontra editor formado e avaliado pela própria casa",
-      "Vê portfólio, estrelas e histórico reais antes de fechar",
-      "Fala direto com o editor, sem intermediário no caminho",
-      "Paga o preço cheio pro editor — 0% de comissão",
+      "Encontra editores já treinados pela Editify",
+      "Vê os trabalhos e as avaliações de cada um antes de fechar",
+      "Fala direto com o editor, sem ninguém no meio",
+      "Paga direto pra ele, sem pagar comissão nenhuma",
     ],
   },
 } as const;
 
-/** Linha do tempo da Editify (confira/ajuste as datas se precisar). */
+/** Linha do tempo da Editify (ajuste as datas se precisar). */
 export const TIMELINE = [
   {
     year: "2022",
-    title: "O primeiro corte",
-    text: "A Editify nasce com o Treinamento — edição de vídeo tratada como profissão de verdade, não passatempo.",
+    title: "O começo",
+    text: "A Editify começou como um treinamento pra ensinar gente comum a editar vídeo e ganhar dinheiro com isso.",
   },
   {
     year: "2023",
-    title: "Ninguém edita sozinho",
-    text: "Nasce a Comunidade: estúdios em voz, crítica de corte e uma galera inteira na mesma jornada.",
+    title: "A comunidade",
+    text: "Veio a comunidade: um lugar pros editores se conhecerem, trocarem dicas e crescerem juntos.",
   },
   {
     year: "2024",
-    title: "Do talento ao trabalho",
-    text: "Chegam o Contratar e o Editfólio. O editor formado vira contratável, com portfólio verificado na frente do cliente.",
+    title: "O trabalho",
+    text: "Chegou o Contratar e o Editfólio. Agora o editor formado consegue achar clientes e mostrar seu trabalho pra eles.",
   },
   {
     year: "Hoje",
-    title: "Um ecossistema",
-    text: "Treinamento, comunidade e contratação conectados. Mais de mil editores formados — e a casa só cresce.",
+    title: "Tudo junto",
+    text: "Treinamento, comunidade e contratação no mesmo lugar, com mais de mil editores formados. E continua crescendo.",
   },
 ] as const;
 
@@ -143,21 +140,14 @@ export const TRANSFORMATIONS = [
   },
 ] as const;
 
-/** Métricas de resultado (seção de provas). */
-export const RESULT_STATS = [
-  { value: "R$15.860", label: "salário médio dos alunos" },
-  { value: "4.92", label: "nota média, de 5" },
-  { value: "+1.000", label: "formados e contando" },
-] as const;
-
 export const FOUNDER = {
   name: "Erick Julrich",
   role: "Fundador da Editify",
   photo: "/founder.jpg",
   headline: "Saí da escola aos 17 pra editar vídeo. Hoje construo a casa de quem faz o mesmo.",
   bio: [
-    "Em 2 meses editando, bati R$20.000/mês. Virei diretor de uma agência gringa que faturou mais de R$1 milhão e abri a minha própria, que fez R$450 mil em 6 meses.",
-    "No total, já movimentei mais de R$2,2 milhões no mercado de edição. Criei a Editify pra ser o que eu queria ter tido no começo: a prova de que edição de vídeo é profissão de verdade — e o ecossistema inteiro pra viver dela.",
+    "Em 2 meses editando, bati R$20.000 por mês. Virei diretor de uma agência gringa que faturou mais de R$1 milhão e abri a minha própria, que fez R$450 mil em 6 meses.",
+    "No total, já movimentei mais de R$2,2 milhões editando e vendendo edição. Criei a Editify pra dar pras outras pessoas o que eu não tive quando comecei: um caminho completo pra aprender, crescer e viver de edição de vídeo.",
   ],
   founderStats: [
     { value: "R$2,2M+", label: "movimentados por mim no mercado" },
@@ -165,16 +155,8 @@ export const FOUNDER = {
     { value: "17", label: "anos quando comecei" },
   ],
   socials: [
-    {
-      label: "Instagram",
-      href: "https://instagram.com/erickjulrich",
-      handle: "@erickjulrich",
-    },
-    {
-      label: "YouTube",
-      href: "https://youtube.com/@erickjulrich",
-      handle: "@erickjulrich",
-    },
+    { label: "Instagram", href: "https://instagram.com/erickjulrich", handle: "@erickjulrich" },
+    { label: "YouTube", href: "https://youtube.com/@erickjulrich", handle: "@erickjulrich" },
   ],
 } as const;
 

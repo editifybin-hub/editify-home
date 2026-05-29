@@ -22,12 +22,12 @@ export default function Timeline() {
             {...fadeUp(0.08)}
             className="mt-4 font-[family-name:var(--font-display)] uppercase text-ink leading-[0.96] tracking-[-0.01em] text-[clamp(2.25rem,6vw,4rem)]"
           >
-            Três anos
+            Quatro anos
             <br />
             <span className="text-accent">construindo a casa.</span>
           </motion.h2>
           <motion.p {...fadeUp(0.16)} className="mt-5 text-[15px] sm:text-[16px] text-muted leading-relaxed">
-            A Editify não nasceu ecossistema. Ela virou um — peça por peça, desde 2022.
+            A Editify foi crescendo aos poucos desde 2022. Cada ano, uma parte nova.
           </motion.p>
         </div>
 

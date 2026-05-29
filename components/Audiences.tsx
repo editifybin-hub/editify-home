@@ -30,8 +30,8 @@ export default function Audiences() {
             <span className="text-accent">e quem contrata.</span>
           </motion.h2>
           <motion.p {...fadeUp(0.16)} className="mt-5 text-[15px] sm:text-[16px] text-muted leading-relaxed">
-            O mesmo ecossistema que forma o editor é o que entrega, pro cliente,
-            um profissional pronto e verificado. Os dois lados ganham na mesma mesa.
+            A mesma Editify que ensina o editor é a que entrega, pra quem
+            contrata, um profissional pronto pra trabalhar. Os dois lados saem ganhando.
           </motion.p>
         </div>
 

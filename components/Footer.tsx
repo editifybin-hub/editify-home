@@ -15,8 +15,8 @@ export default function Footer() {
           <span className="text-accent">pra editores.</span>
         </h2>
         <p className="mt-6 mx-auto max-w-[560px] text-[15px] sm:text-[16px] text-white/60 leading-relaxed">
-          Treinamento, comunidade e contratação conectados — a casa completa de
-          quem leva edição de vídeo a sério no Brasil.
+          Treinamento, comunidade e contratação no mesmo lugar. A casa completa
+          de quem edita vídeo no Brasil.
         </p>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-2.5">
@@ -40,8 +40,11 @@ export default function Footer() {
           <div className="flex items-center gap-2.5">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/favicon.png" alt="Editify" width={28} height={28} className="h-7 w-7 object-contain" />
-            <span className="font-[family-name:var(--font-display)] text-[18px] tracking-tight text-white leading-none">
-              EDITIFY
+            <span
+              className="text-[18px] font-bold leading-none text-white"
+              style={{ fontFamily: "Helvetica, 'Helvetica Neue', Arial, sans-serif", letterSpacing: "-0.02em" }}
+            >
+              Editify
             </span>
           </div>
 

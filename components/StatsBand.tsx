@@ -50,7 +50,6 @@ export default function StatsBand() {
                 <span className="font-[family-name:var(--font-display)] text-white leading-none text-[clamp(2.75rem,7vw,4.5rem)]">
                   <CountUp
                     target={s.target}
-                    prefix={"prefix" in s ? s.prefix : ""}
                     decimals={"decimals" in s ? s.decimals : 0}
                     sep={"sep" in s ? s.sep : false}
                   />

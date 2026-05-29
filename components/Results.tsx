@@ -21,20 +21,20 @@ export default function Results() {
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         <div className="text-center max-w-2xl mx-auto">
           <motion.p {...fadeUp(0)} className="text-[11px] font-bold tracking-[0.3em] uppercase text-accent">
-            Não é promessa. É histórico.
+            Resultados reais
           </motion.p>
           <motion.h2
             {...fadeUp(0.08)}
             className="mt-4 font-[family-name:var(--font-display)] uppercase text-ink leading-[0.96] tracking-[-0.01em] text-[clamp(2.25rem,6vw,4rem)]"
           >
-            Gente real,
+            O que acontece
             <br />
-            <span className="text-accent">resultado real.</span>
+            <span className="text-accent">com quem entra.</span>
           </motion.h2>
           <motion.p {...fadeUp(0.16)} className="mt-5 text-[15px] sm:text-[16px] text-muted leading-relaxed">
-            O salário médio de quem passa pela casa hoje é de{" "}
-            <span className="text-ink font-semibold">R$15.860</span>. Não é sorte —
-            é o que acontece quando talento encontra método, comunidade e trabalho.
+            Hoje, quem passa pela Editify ganha em média{" "}
+            <span className="text-ink font-semibold">R$15.860</span> por mês
+            editando vídeo. Aqui estão alguns dos alunos e quanto eles faturam.
           </motion.p>
         </div>
 
@@ -103,7 +103,7 @@ export default function Results() {
       <div className="mt-16 sm:mt-20">
         <AvatarMarquee reverse size={52} />
         <p className="mt-6 text-center text-[13px] text-muted">
-          Editores de verdade, formados e em atividade dentro da casa.
+          Alguns dos editores que já fazem parte da Editify.
         </p>
       </div>
     </section>
