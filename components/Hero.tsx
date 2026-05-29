@@ -68,10 +68,11 @@ export default function Hero() {
 
         <motion.p
           {...fadeUp(0.3)}
-          className="mt-7 mx-auto max-w-[620px] text-[16px] sm:text-[19px] leading-relaxed text-editify-muted"
-          style={{ textWrap: "balance" }}
+          className="mt-7 mx-auto max-w-[680px] text-[16px] sm:text-[19px] leading-relaxed text-editify-muted"
         >
-          A Editify é o ecossistema de quem leva edição a sério. Aqui você{" "}
+          A Editify é o ecossistema de quem leva edição a sério.
+          <br className="hidden sm:block" />{" "}
+          Aqui você{" "}
           <span className="text-white font-semibold">aprende</span>, se conecta
           e é <span className="text-white font-semibold">contratado</span>.
         </motion.p>
